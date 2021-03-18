@@ -14,7 +14,7 @@ The function should:
   
   Example createMenuItem('tacos', 8, 'Lunch') should return {name: 'tacos', price: 8, category: 'Lunch'}
 */
-
+// createapet function
 function createMenuItem(/*Your code here*/){
     /*Your code here*/
 }
@@ -43,13 +43,21 @@ Using the burger object below do the following:
 
   For example: burger.discount("teacher") would return 13.5 and burger.discount("public") would return 16.2
 */
-
+// method inside dog object
 export const burger = {
   name: "Burger", 
   price: 18, 
   category: "Lunch", 
-  /*Your code here*/
+  discount: function(customer){
+    if (customer === 'teacher' || string === 'stdent'){
+      return this.price * .75;
+    } else if (customer === 'public'){
+      return this.price * .90;
+  }
+  return this.price;
 }
+}
+console.log(burger.discount('teacher'));
 
 
 
@@ -69,7 +77,7 @@ const reviews = [
 Using the reviews array above:
   1. log only Julius' feedback to the console - no function needed 
 */
-
+// reference then dot into feedback
 
 
 
@@ -79,6 +87,8 @@ Using the reviews array above do the following: (no function needed)
   2. log the whole array to the console, make sure the new review is inside of it   
 */
 
+reviews.push({name: 'Jasmine', rating: 1, feedback: "The lamb was raw, the water was raw, everything was raw."});
+console.log('Task 4:', reviews)
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
@@ -86,10 +96,11 @@ Reyna's feedback is missing! Use what you know to do the following: (no function
   1. Add this feedback to Reyna's rating - "this place is chill with really cool people, great for getting work done on weekdays"
   2. log the reviews array to the console to check your work
 */
+// line 105 function or  places[3]['region] = 'Europe';
 
+reviews[7].feedback = "this place is chill with really cool people, great for getting work done on weekdays"
 
-
-
+console.log(reviews);
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 6: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 Write a function to return a review based on the index of the review in the array.
@@ -101,9 +112,10 @@ Use the getReviewByIndex function below to do the following:
   For example: getReviewByIndex(reviews,0) would return: "Daniela gave the restaurant a 5 star review, and their feedback was: Beautiful atmosphere and wonderful vegan options!"
 */
 
-
-function getReviewByIndex(/*Your code here*/) {
-  /*Your code here*/
+// receive an array and desired index and reference review at that index and return it
+// places[0]['thecountry']; // reference a country at index zero
+function getReviewByIndex(array, number) {
+  return `${array[number].name} gave the restaurant a ${array[number].rating} star review, and their feedback was: ${array[number].feedback}`
 }
 
 
@@ -120,10 +132,13 @@ Use the getLastReview function below to do the following:
   For example: getLastReview(reviews) would return: "Reyna gave the restaurant a 3.5 star review, and their feedback was: this place is chill with really cool people, great for getting work done on weekdays".
 */
 
+// receive an array of objects (reviewsarrays) pass arrays as parameter
+// return the last index (array.length-1)
+function getLastReview(array) {
+  return`${array[array.length-1].name} gave the restaurant a ${array[array.length-1].rating} star review, and their feedback was: ${array[array.length-1].feedback}`;
+}
 
-function getLastReview(/*Your code here*/) {
-  /*Your code here*/
-} 
+console.log('Task 7:', getLastReview(reviews));
 
 
 
@@ -160,7 +175,7 @@ Use the getLongReviews function below to do the following:
     {name: "Julius", rating: 2, feedback: "I was largely unimpressed by this venue. Nothing special on the menu and too expensive. The atmosphere is polarizing, and not for me, but I think some would like it." }
   ]
 */
-
+// use filter here
 function getLongReviews(/* code here */) {
     /* code here */
   }
